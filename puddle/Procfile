@@ -1,0 +1,1 @@
+web: celery -A campoprime worker --loglevel=info -P threads & celery -A campoprime beat --loglevel=info & python -m gunicorn campoprime.asgi:application -k uvicorn.workers.UvicornWorker
